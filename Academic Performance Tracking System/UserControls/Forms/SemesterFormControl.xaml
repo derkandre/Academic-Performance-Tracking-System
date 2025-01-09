@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="Academic_Performance_Tracking_System.UserControls.Forms.SemesterFormControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:Academic_Performance_Tracking_System.UserControls.Forms"
+             xmlns:adonisUI="clr-namespace:AdonisUI;assembly=AdonisUI"
+             xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+             xmlns:extended="clr-namespace:WpfExtendedControls;assembly=WpfExtendedControls"  
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="523" d:DesignWidth="782">
+
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+        </Style>
+
+        <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+            <Setter Property="FontSize" Value="12.5"/>
+            <Setter Property="Height" Value="32"/>
+            <Style.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="Text" Value="Select an Item" />
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="">
+                            <Setter Property="Text" Value="Select an Item"/>
+                            <Setter Property="Foreground" Value="Gray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="FontSize" Value="12.5"/>
+        </Style>
+
+        <Style TargetType="DatePicker" BasedOn="{StaticResource {x:Type DatePicker}}">
+            <Setter Property="Height" Value="32"/>
+            <Style.Resources>
+                <Style TargetType="Calendar" BasedOn="{StaticResource {x:Type Calendar}}">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.25" ScaleY="1.25" />
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Height" Value="200" />
+                    <Setter Property="Width" Value="200" />
+                </Style>
+
+                <Style TargetType="Popup">
+                    <Setter Property="MinWidth" Value="250" />
+                    <Setter Property="MinHeight" Value="200" />
+                </Style>
+            </Style.Resources>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="IsDropDownOpen" Value="True"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="extended:TimePicker">
+            <Setter Property="MinHeight" Value="35"/>
+            <Setter Property="MinWidth" Value="160"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Style.Resources>
+                <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+                    <Setter Property="MinWidth" Value="40"/>
+                    <Setter Property="FontSize" Value="15"/>
+                    <Setter Property="IsReadOnly" Value="False"/>
+                    <Setter Property="TextAlignment" Value="Center"/>
+                </Style>
+
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                    <Setter Property="MinWidth" Value="25"/>
+                </Style>
+
+                <Style TargetType="Control">
+                    <Style.Resources>
+                        <Style TargetType="ToolTip">
+                            <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+                            <Setter Property="ToolTipService.ShowDuration" Value="10000"/>
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style TargetType="UniformGrid">
+            <Style.Resources>
+                <Style TargetType="ToggleButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                    <Setter Property="FontSize" Value="13"/>
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}"/>
+                            <Setter Property="extensions:CornerRadiusExtension.CornerRadius" Value="6"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </UserControl.Resources>
+
+    <!--#endregion-->
+
+    <Grid>
+        <Border CornerRadius="12" Margin="5,15,5,25" Grid.Row="1" Grid.ColumnSpan="2">
+            <GroupBox x:Name="DetailsFormGroupBox">
+                <GroupBox.Header>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Text="SEMESTER DETAILS" FontWeight="DemiBold" FontSize="16" VerticalAlignment="Center"/>
+                        <Button DockPanel.Dock="Right" Height="28" Style="{StaticResource GenericActionButton}" Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" Click="GoBackBtn_Click">
+                            <TextBlock FontWeight="SemiBold">
+                                <InlineUIContainer BaselineAlignment="Center">
+                                    <iconPacks:PackIconMaterial Kind="ChevronLeftCircle" Height="12" Margin="0,1,0,0"/>
+                                </InlineUIContainer>
+                                <Run Text=" GO BACK"/>
+                            </TextBlock>
+                        </Button>
+                    </DockPanel>
+                </GroupBox.Header>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.08*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0">
+                        <TextBlock FontWeight="DemiBold" Margin="0,10,0,5">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="Tag" Height="12"/>
+                            </InlineUIContainer>
+                            <Run Text=" SELECT SEMESTER"/>
+                        </TextBlock>
+                        <ComboBox x:Name="SemesterComboBox">
+                            <ComboBoxItem Content="1st Semester"/>
+                            <ComboBoxItem Content="2nd Semester"/>
+                            <ComboBoxItem Content="Summer/Mid-Year"/>
+                        </ComboBox>
+
+                        <UniformGrid Columns="2" Rows="2">
+                            <TextBlock FontWeight="DemiBold" Margin="0,15,0,5">
+                                <InlineUIContainer BaselineAlignment="Center">
+                                    <iconPacks:PackIconMaterial Kind="Tag" Height="12"/>
+                                </InlineUIContainer>
+                                <Run Text=" ACADEMIC YEAR"/>
+                            </TextBlock>
+                            
+                            <TextBlock/>
+                            
+                            <ComboBox x:Name="AcadYearStart" Margin="0,0,10,0"/>
+                            <ComboBox x:Name="AcadYearEnd" Margin="10,0,0,0"/>
+                        </UniformGrid>
+
+                        <TextBlock FontWeight="DemiBold" Margin="0,15,0,5">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="Tag" Height="12"/>
+                            </InlineUIContainer>
+                            <Run Text=" START DATE"/>
+                        </TextBlock>
+                        <DatePicker x:Name="StartDateField" extensions:WatermarkExtension.Watermark="Enter start date" FontSize="12.5"/>
+
+                        <TextBlock FontWeight="DemiBold" Margin="0,15,0,5">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="Tag" Height="12"/>
+                            </InlineUIContainer>
+                            <Run Text=" END DATE"/>
+                        </TextBlock>
+                        <DatePicker x:Name="EndDateField" extensions:WatermarkExtension.Watermark="Enter end date" FontSize="12.5"/>
+
+                        <Separator Margin="0,25,0,25"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Height="28" Margin="10,0,10,0" Style="{StaticResource RedActionButton}" Background="#F44336" Click="ClearBtn_Click">
+                                <TextBlock FontSize="14" FontWeight="SemiBold">
+                                <InlineUIContainer BaselineAlignment="Center">
+                                    <iconPacks:PackIconMaterial Kind="CloseCircleOutline" Height="14" Margin="0,1,0,0"/>
+                                </InlineUIContainer>
+                                <Run Text=" CLEAR"/>
+                                </TextBlock>
+                            </Button>
+
+                            <Button Height="28" Grid.Column="1" Margin="10,0,10,0" HorizontalAlignment="Stretch" Style="{StaticResource GreenActionButton}" Background="#4CAF50" Click="SaveBtn_Click">
+                                <TextBlock FontSize="14" FontWeight="SemiBold">
+                                <InlineUIContainer BaselineAlignment="Center">
+                                    <iconPacks:PackIconMaterial Kind="ContentSaveOutline" Height="13" Margin="0,1,0,0"/>
+                                </InlineUIContainer>
+                                <Run Text=" SAVE"/>
+                                </TextBlock>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+
+                    <!-- Column 2 -->
+                    
+                    <!-- Honestly I don't know what to put here at the moment, I'll just set the placeholder below at the meantime -->
+                    <Border CornerRadius="12" VerticalAlignment="Stretch" Grid.Column="2" Margin="10" Background="{DynamicResource {x:Static adonisUI:Brushes.Layer4BackgroundBrush}}">
+                    </Border>
+                </Grid>
+            </GroupBox>
+        </Border>
+    </Grid>
+</UserControl>

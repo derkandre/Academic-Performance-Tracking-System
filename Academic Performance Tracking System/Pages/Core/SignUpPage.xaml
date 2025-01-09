@@ -1,0 +1,27 @@
+﻿<Page x:Class="Academic_Performance_Tracking_System.Pages.Core.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Academic_Performance_Tracking_System"
+      xmlns:adonisUI="clr-namespace:AdonisUI;assembly=AdonisUI"
+      xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+      xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="300"
+      Title="SignUp">
+
+    <Grid>
+        <StackPanel Margin="15,0,15,0" DockPanel.Dock="Top" Height="250">
+            <TextBlock Text="Create Profile" FontSize="18" FontWeight="DemiBold" DockPanel.Dock="Top"
+                       TextAlignment="Center" Margin="0,5,0,30" Foreground="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+            <TextBlock Text="Profile Name" Foreground="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+            <TextBox x:Name="ProfileNameField" Margin="0,2" Height="30" extensions:WatermarkExtension.Watermark="Enter profile name of choice"/>
+            <TextBlock Text="Password" Margin="0,10,0,0" Foreground="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+            <PasswordBox x:Name="ProfilePasswordField" Margin="0,2" Height="30" extensions:WatermarkExtension.Watermark="Enter password of choice"/>
+            <Button DockPanel.Dock="Bottom" Content="Create" Height="30" Margin="30,45,30,0" Click="CreateBtn_Click"
+                    Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}"/>
+        </StackPanel>
+    </Grid>
+</Page>

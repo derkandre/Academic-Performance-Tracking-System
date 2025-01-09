@@ -1,0 +1,21 @@
+﻿<Page x:Class="Academic_Performance_Tracking_System.Pages.Forms.AddSubjectsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Academic_Performance_Tracking_System"
+      xmlns:adonisUI="clr-namespace:AdonisUI;assembly=AdonisUI"
+      xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+      xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+      xmlns:extended="clr-namespace:WpfExtendedControls;assembly=WpfExtendedControls"
+      xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="523" d:DesignWidth="782"
+      Title="AddSubjectsPage">
+
+    <Grid>
+        <TextBlock Text="ADD SUBJECTS" FontWeight="DemiBold" FontSize="24" Foreground="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+        <ContentControl x:Name="FormContentControl" Margin="0,50,0,0"/>
+    </Grid>
+</Page>

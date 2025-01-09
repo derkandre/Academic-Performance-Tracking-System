@@ -1,0 +1,172 @@
+﻿<Application x:Class="Academic_Performance_Tracking_System.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Academic_Performance_Tracking_System"
+             xmlns:adonisUI="clr-namespace:AdonisUI;assembly=AdonisUI"
+             xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             ShutdownMode="OnMainWindowClose"
+             StartupUri="Windows/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AdonisUI;component/ColorSchemes/Dark.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AdonisUI.ClassicTheme;component/Resources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="MainTitleHeader" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="10,13"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="TextAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Style>
+
+            <Style x:Key="Icons" TargetType="iconPacks:PackIconMaterial">
+                <Setter Property="Foreground" Value="{DynamicResource AccentBrush}"/>
+            </Style>
+
+            <Style x:Key="SidebarButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+            </Style>
+
+            <Style x:Key="GreenActionButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Background" Value="#4CAF50"/>
+                <Style.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Style.Resources>
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="BorderBrush" Value="#4CAF50"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#4CAF50"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#4CAF50"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#4CAF50"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="BorderBrush" Value="#4CAF50"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="RedActionButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="BorderBrush" Value="#F44336"/>
+                <Setter Property="Background" Value="#F44336"/>
+                <Style.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Style.Resources>
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="BorderBrush" Value="#F44336"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#F44336"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#F44336"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#F44336"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="BorderBrush" Value="#F44336"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="RedActionButtonNoIcon" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Background" Value="#F44336"/>
+                <Setter Property="Foreground" Value="White"/>
+
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="BorderBrush" Value="#F44336"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#F44336"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#F44336"/>
+                        <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#F44336"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="BorderBrush" Value="#F44336"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="YellowActionButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="BorderBrush" Value="#FFEB3B"/>
+                <Setter Property="Background" Value="#FFEB3B"/>
+                <Style.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Style.Resources>
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="BorderBrush" Value="#FFEB3B"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#FFEB3B"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#FFEB3B"/>
+                        <Setter Property="extensions:RippleExtension.BackgroundBrush" Value="#FFEB3B"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="BorderBrush" Value="#FFEB3B"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+
+            <Style x:Key="GenericActionButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Background" Value="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}"/>
+                <Style.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Style.Resources>
+            </Style>
+
+            <Style TargetType="Control">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+            </Style>
+
+            <CornerRadius x:Key="{x:Static adonisUI:Dimensions.CornerRadius}">6</CornerRadius>
+            <Thickness x:Key="{x:Static adonisUI:Dimensions.BorderThickness}">1</Thickness>
+
+            <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                <Setter Property="FontFamily" Value="Roboto"/>
+                <Setter Property="FontSize" Value="13"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

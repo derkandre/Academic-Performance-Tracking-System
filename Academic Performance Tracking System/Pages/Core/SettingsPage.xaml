@@ -1,0 +1,213 @@
+﻿<Page x:Class="Academic_Performance_Tracking_System.Pages.Core.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Academic_Performance_Tracking_System"
+      xmlns:adonisUI="clr-namespace:AdonisUI;assembly=AdonisUI"
+      xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+      xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" d:DesignWidth="865"
+      Title="SettingsPage">
+
+    <Page.Resources>
+        <Style TargetType="GroupBox" BasedOn="{StaticResource {x:Type GroupBox}}">
+            <Setter Property="extensions:GroupBoxExtension.HeaderBackground" Value="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUI:Brushes.ForegroundBrush}}"/>
+        </Style>
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.20*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="SETTINGS" FontWeight="DemiBold" FontSize="22"/>
+
+        <Border CornerRadius="8" Background="{DynamicResource {x:Static adonisUI:Brushes.Layer3BackgroundBrush}}" 
+                    Margin="10" Grid.Row="1">
+            <GroupBox Margin="4">
+                <GroupBox.Header>
+                    <TextBlock Text="USER INTERFACE" FontWeight="DemiBold" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock VerticalAlignment="Top" FontWeight="DemiBold" Margin="0,10,0,0">
+                        <InlineUIContainer BaselineAlignment="Center">
+                            <iconPacks:PackIconMaterial Kind="Brightness4"/>
+                        </InlineUIContainer>
+                        <Run Text=" Theme:   "/>
+                    </TextBlock>
+                    <ToggleButton Checked="ChangeThemeColor_Switch" Unchecked="ChangeThemeColor_Switch" Style="{DynamicResource {x:Static adonisUI:Styles.ToggleSwitch}}" 
+                                  Grid.Column="1" Content="Light/Dark" VerticalAlignment="Top"  Margin="0,10,0,0">
+                    </ToggleButton>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border CornerRadius="8" Background="{DynamicResource {x:Static adonisUI:Brushes.Layer3BackgroundBrush}}" 
+            Margin="10" Grid.Row="1" Grid.Column="1">
+            <GroupBox Margin="4">
+                <GroupBox.Header>
+                    <TextBlock Text="BACKUP &#38; RESTORE" FontWeight="DemiBold" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock VerticalAlignment="Top" FontWeight="DemiBold" Margin="0,10,0,0">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="DatabaseExportOutline"/>
+                            </InlineUIContainer>
+                            <Run Text=" Export Data:   "/>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Top" FontWeight="DemiBold" Margin="0,25,0,0">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="DatabaseImportOutline"/>
+                            </InlineUIContainer>
+                            <Run Text=" Import Data:   "/>
+                        </TextBlock>
+
+                        <DockPanel Margin="2,30,0,0" LastChildFill="True">
+                            <TextBlock Text="DANGER ZONE " FontWeight="DemiBold" FontSize="8" Foreground="#F44336" DockPanel.Dock="Left"/>
+                            <Separator DockPanel.Dock="Right"/>
+                        </DockPanel>
+
+                        <TextBlock VerticalAlignment="Top" FontWeight="DemiBold" Margin="0,15,0,0" Foreground="#F44336">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="TrashCanOutline"/>
+                            </InlineUIContainer>
+                            <Run Text=" Delete Data:   "/>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                        <Button Grid.Column="1" Content="Export" Height="25" Margin="8,7,8,8" Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" Style="{StaticResource GenericActionButton}"/>
+                        <Button Grid.Column="1" Content="Import" Height="25" Margin="8,7,8,8" Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" Style="{StaticResource GenericActionButton}"/>
+                        <Separator DockPanel.Dock="Right" Margin="0,22,2,0"/>
+                        <Button Grid.Column="1" Content="Delete" Height="25" Margin="8,16,8,8" Background="#F44336" Style="{StaticResource RedActionButtonNoIcon}"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border CornerRadius="8" Background="{DynamicResource {x:Static adonisUI:Brushes.Layer3BackgroundBrush}}" 
+            Margin="10" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <GroupBox Margin="4">
+                <GroupBox.Header>
+                    <TextBlock Text="ABOUT SOFTWARE" FontWeight="DemiBold" />
+                </GroupBox.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.15*"/>
+                        <ColumnDefinition Width="1.90*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="0,10,0,0">
+                        <TextBlock FontWeight="DemiBold">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="Apps"/>
+                            </InlineUIContainer>
+                            <Run Text=" Application:   "/>
+                        </TextBlock>
+
+                        <TextBlock FontWeight="DemiBold" Margin="0,25,0,0">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="ApplicationCog"/>
+                            </InlineUIContainer>
+                            <Run Text=" Version:   "/>
+                        </TextBlock>
+
+                        <TextBlock FontWeight="DemiBold" Margin="0,16,0,0">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="InformationBoxOutline"/>
+                            </InlineUIContainer>
+                            <Run Text=" Description:   "/>
+                        </TextBlock>
+                        
+                        <TextBlock FontWeight="DemiBold" Margin="0,35,0,0" TextWrapping="Wrap">
+                            <InlineUIContainer BaselineAlignment="Center">
+                                <iconPacks:PackIconMaterial Kind="License"/>
+                            </InlineUIContainer>
+                            <Run Text=" Licenses:"/>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="0,10,0,0">
+                        <TextBlock Grid.Column="1" Text="Academic Performance Tracking System" TextWrapping="Wrap"/>
+                        <TextBlock x:Name="AppVersionTextBox" Grid.Column="1" Margin="0,10,0,0"/>
+                        <TextBlock Text="Yet just another tool for students to track their academic journey." TextWrapping="Wrap" Margin="0,15,0,0"/>
+                        <Button Content="OPEN" Margin="0,16,10,0" Style="{StaticResource GenericActionButton}"
+                                Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" Click="LicenseBtn_Click"/>
+                    </StackPanel>
+
+                    <Border Grid.Column="2" Background="{DynamicResource {x:Static adonisUI:Brushes.Layer0BackgroundBrush}}" 
+                            Margin="5,0,5,0" Padding="10" CornerRadius="12" BorderThickness="2" BorderBrush="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}">
+                        <StackPanel>
+                            <Border Background="{DynamicResource {x:Static adonisUI:Brushes.Layer1BackgroundBrush}}" CornerRadius="10" Padding="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Width="32" Height="32" CornerRadius="12.5" 
+                                            Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" 
+                                            HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <iconPacks:PackIconMaterial Kind="Github" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    </Border>
+
+                                    <StackPanel Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="@derkandre" FontSize="16" FontWeight="Bold" />
+                                        <TextBlock Text="github.com/derkandre/" FontSize="10" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="{DynamicResource {x:Static adonisUI:Brushes.Layer1BackgroundBrush}}" Margin="0,10,0,0" CornerRadius="10" Padding="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Width="32" Height="32" CornerRadius="12.5" 
+                                            Background="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" 
+                                            HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <iconPacks:PackIconMaterial Kind="XML" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    </Border>
+
+                                    <StackPanel Grid.Column="1" Margin="10,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="Source Code" FontSize="16" FontWeight="Bold" />
+                                        <TextBlock Text="github.com/derkandre/temporary-link-at-the-meantime" FontSize="10" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </GroupBox>
+        </Border>
+    </Grid>
+</Page>

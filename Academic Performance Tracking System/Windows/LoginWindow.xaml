@@ -1,0 +1,41 @@
+﻿<controls:AdonisWindow x:Class="Academic_Performance_Tracking_System.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Academic_Performance_Tracking_System"
+        xmlns:adonisUI="clr-namespace:AdonisUI;assembly=AdonisUI"
+        xmlns:extensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+        xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        BorderBrush="#FF495EA6" Topmost="True" ResizeMode="NoResize"
+        Title="LoginWindow" Height="400" Width="300">
+
+    <Window.Style>
+        <Style TargetType="Window" BasedOn="{StaticResource {x:Type Window}}"/>
+    </Window.Style>
+
+    <controls:AdonisWindow.TitleBarContent>
+        <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Right">
+            <Button Content="?"
+                Style="{DynamicResource {x:Static adonisUI:Styles.WindowButton}}"
+                FontFamily="Segoe UI"
+                FontSize="16"/>
+        </StackPanel>
+    </controls:AdonisWindow.TitleBarContent>
+
+    <Grid>
+        <Border x:Name="LoginFrame" BorderBrush="{DynamicResource {x:Static adonisUI:Brushes.AccentBrush}}" Margin="40">
+            <DockPanel LastChildFill="False">
+                <Frame x:Name="PageAccessFrame" DockPanel.Dock="Top" NavigationUIVisibility="Hidden"/>
+
+                <Button x:Name="PageNavigateBtn" DockPanel.Dock="Bottom" Margin="65,0,65,10" Click="CreateBtn_Click" Height="20"
+                        Background="Transparent" Content="Create" BorderThickness="0" FontSize="6">
+                </Button>
+            </DockPanel>
+        </Border>
+    </Grid>
+</controls:AdonisWindow>

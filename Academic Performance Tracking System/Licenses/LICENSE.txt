@@ -1,6 +1,8 @@
-The Clear BSD License
+﻿Academic Performance Tracking System
 
-Copyright (c) 2024 Derick Andre Arcenas
+This software is licensed under the Clear BSD License.
+
+Copyright (c) 2025 Derick Andre Arcenas
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -30,3 +32,32 @@ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
 IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
+
+---
+
+Third-Party Packages and Their Licenses
+
+1. AdonisUI.ClassicTheme
+   - License: MIT License
+   - https://github.com/benruehl/adonis-ui/blob/master/LICENSE
+
+2. WpfExtendedControls
+   - License: MIT License
+   - https://github.com/Akeloya/WPFComponents/blob/master/LICENSE.md
+
+3. MahApps.Metro.IconPacks.Material
+   - License: MIT License
+   - https://github.com/MahApps/MahApps.Metro.IconPacks/blob/develop/LICENSE
+
+4. Pictogrammers' Material Design Icons
+   - License: Pictogrammers Free License
+   - https://pictogrammers.com/docs/general/license/
+
+5. .NET (WPF and Runtime)
+   - License: MIT License
+   - https://github.com/dotnet/wpf/blob/main/LICENSE.TXT
+
+---
+
+For more information about the licenses of the third-party packages and controls
+used in this project, please refer to their respective documentation.
