@@ -8,7 +8,7 @@
 ### PREVIEW v0.1.0-prealpha.25009
 <br/>
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/3f5ca872-4e4d-45ba-873e-17726a8a938f" alt="image" style="width: 70%; height: 70%;">
+    <img src="https://github.com/user-attachments/assets/3f5ca872-4e4d-45ba-873e-17726a8a938f" alt="image" style="width: 85%; height: 85%;">
     <h4>Subjects View</h4>
 </div>
 <br/>
